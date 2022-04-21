@@ -16,3 +16,4 @@ rootProject.name = "movieApplication"
 include ':app'
 include ':domain'
 include ':data'
+include ':network'
