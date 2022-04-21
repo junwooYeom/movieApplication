@@ -15,7 +15,7 @@ ext {
     junitTest = "1.1.3"
     espresso = "3.4.0"
 
-
+    retrofit = "2.9.0"
 }
 
 task clean(type: Delete) {
