@@ -8,7 +8,9 @@ import com.junwooyeom.domain.MovieRemoteDataSource
 import com.junwooyeom.network.MovieInfraService
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class MovieRemoteDataSourceImpl @Inject constructor(
     private val movieInfraService: MovieInfraService
 ) : MovieRemoteDataSource{
