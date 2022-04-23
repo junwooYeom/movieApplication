@@ -7,6 +7,8 @@ data class MovieDto(
     val title: String,
     @SerializedName("link")
     val link: String,
+    @SerializedName("image")
+    val image: String,
     @SerializedName("subtitle")
     val subtitle: String,
     @SerializedName("pubDate")

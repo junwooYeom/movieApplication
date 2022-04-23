@@ -7,6 +7,7 @@ fun MovieDto.toMovie(): Movie =
     Movie(
         title,
         link,
+        image,
         subtitle,
         pubDate,
         director,
