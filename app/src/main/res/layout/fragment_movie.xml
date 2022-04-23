@@ -12,12 +12,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
+            android:id="@+id/et_search"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:hint="영화 이름을 입력하세요."/>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="search"

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -34,12 +35,26 @@ class MovieFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMovieBinding.bind(view)
+
+        initListeners()
     }
 
-    fun getMovie(query: String) {
+    private fun getMovie(query: String) {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getMovie(query).collect {
                 adapter.submitData(it)
+            }
+        }
+    }
+
+    private fun initListeners() {
+        binding.btnSearch.setOnClickListener {
+            with (binding.etSearch.text) {
+                if (isNullOrEmpty().not()) {
+                    getMovie(this.toString())
+                } else {
+                    Toast.makeText(requireContext(), "영화 제목을 입력해주세요", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
