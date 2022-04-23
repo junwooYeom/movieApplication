@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="movie"
             type="com.junwooyeom.domain.Movie" />
+        <variable
+            name="isSelected"
+            type="Boolean" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -76,7 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_star_24"
-            />
+            app:tint="@{isSelected ? @color/yellow : @color/gray}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
