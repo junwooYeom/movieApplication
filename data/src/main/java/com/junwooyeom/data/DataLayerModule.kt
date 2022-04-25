@@ -5,16 +5,25 @@ import com.junwooyeom.domain.MovieRepository
 import com.junwooyeom.network.MovieInfraService
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
-@InstallIn(ActivityComponent::class)
-abstract class DataLayerModule {
+@InstallIn(SingletonComponent::class)
+class DataLayerModule {
 
-    @Binds
-    abstract fun bindsRemoteDataSource(movieRemoteDataSourceImpl: MovieRemoteDataSourceImpl) : MovieRemoteDataSource
+    @Provides
+    @Singleton
+    fun providesRemoteDataSource(infraService: MovieInfraService) : MovieRemoteDataSource =
+        MovieRemoteDataSourceImpl(infraService)
 
-    @Binds
-    abstract fun bindsMovieRepository(movieRepositoryImpl: MovieRepositoryImpl): MovieRepository
+
+    @Provides
+    @Singleton
+    fun bindsMovieRepository(dataSource: MovieRemoteDataSource): MovieRepository =
+        MovieRepositoryImpl(dataSource)
+
 }

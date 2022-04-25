@@ -15,9 +15,7 @@ class MovieViewModel @Inject constructor(
     private val getMoviesUseCase: GetMoviesUseCase
 ) : ViewModel() {
 
-
     fun getMovie(query: String) : Flow<PagingData<Movie>> {
-        return getMovie(query).cachedIn(viewModelScope)
+        return getMoviesUseCase(query).cachedIn(viewModelScope)
     }
-
 }

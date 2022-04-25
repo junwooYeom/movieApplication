@@ -24,7 +24,8 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.ViewHolder>(movieComp
         private val binding: ItemMovieBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Movie?, isFavorite: Boolean) {
-
+            binding.movie = item
+            binding.isSelected = isFavorite
         }
     }
 

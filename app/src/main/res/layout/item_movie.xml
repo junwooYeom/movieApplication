@@ -42,6 +42,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:textStyle="bold"
+                android:text="@{movie.title}"
                 app:layout_constraintTop_toTopOf="@id/iv_movie"
                 app:layout_constraintLeft_toRightOf="@id/iv_movie"
                 app:layout_constraintRight_toRightOf="parent"/> <!-- 나중에 Star 버튼 누를 때 변경 -->
@@ -51,6 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:text="@{movie.director}"
                 app:layout_constraintTop_toBottomOf="@id/tv_title"
                 app:layout_constraintLeft_toRightOf="@id/iv_movie"
                 app:layout_constraintRight_toRightOf="parent"/>
@@ -60,6 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:text="@{movie.actor}"
                 app:layout_constraintTop_toBottomOf="@id/tv_director"
                 app:layout_constraintLeft_toRightOf="@id/iv_movie"
                 app:layout_constraintRight_toRightOf="parent" />
@@ -69,18 +72,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:text="@{Float.toString(movie.userRating)}"
                 app:layout_constraintTop_toBottomOf="@id/tv_actor"
                 app:layout_constraintLeft_toRightOf="@id/iv_movie"
                 app:layout_constraintRight_toRightOf="parent"/>
         </LinearLayout>
         
-        <ImageView
+        <ImageButton
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_star_24"
-            app:tint="@{isSelected ? @color/yellow : @color/gray}" />
+            android:background="@drawable/ic_baseline_star_24"
+            android:backgroundTint="@{isSelected ? @color/yellow : @color/gray}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
