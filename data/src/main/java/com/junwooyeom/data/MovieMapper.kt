@@ -1,5 +1,6 @@
 package com.junwooyeom.data
 
+import com.example.database.MovieEntity
 import com.junwooyeom.domain.Movie
 import com.junwooyeom.network.MovieDto
 
@@ -12,6 +13,30 @@ fun MovieDto.toMovie(): Movie =
         pubDate,
         director.toListString(),
         actor.toListString(),
+        userRating
+    )
+
+fun MovieEntity.toMovie(): Movie =
+    Movie(
+        title,
+        link,
+        image,
+        subtitle,
+        pubDate,
+        director,
+        actor,
+        userRating
+    )
+
+fun Movie.toMovieEntity(): MovieEntity =
+    MovieEntity(
+        title,
+        link,
+        image,
+        subtitle,
+        pubDate,
+        director,
+        actor,
         userRating
     )
 
