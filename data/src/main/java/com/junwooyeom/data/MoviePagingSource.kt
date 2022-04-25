@@ -23,7 +23,7 @@ class MoviePagingSource(
             LoadResult.Page(
                 data = response.items.map { it.toMovie() },
                 prevKey = null,
-                nextKey = if (nextPageNumber > 1000) null else response.start + 10
+                nextKey = if (nextPageNumber + 10 >= 1001) null else response.start + 10
             )
         } catch (e: Exception) {
             LoadResult.Error(e)
