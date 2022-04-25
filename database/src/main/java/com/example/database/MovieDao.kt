@@ -18,5 +18,5 @@ interface MovieDao {
 
     @Delete
     fun deleteToFavorite(movieEntity: MovieEntity)
-    
+
 }
