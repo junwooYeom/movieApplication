@@ -14,9 +14,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var navController: NavController
-    private lateinit var appBarConfiguration: AppBarConfiguration
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,16 +21,5 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        navController = binding.navHostFragmentContainer.findNavController()
-
-        appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.movieFragment)
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-    }
-
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp(appBarConfiguration)
     }
 }
