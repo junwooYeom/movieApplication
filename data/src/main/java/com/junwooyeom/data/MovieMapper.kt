@@ -10,7 +10,23 @@ fun MovieDto.toMovie(): Movie =
         image,
         subtitle,
         pubDate,
-        director,
-        actor,
+        director.toDirector(),
+        actor.toActors(),
         userRating
     )
+
+fun String.toDirector() : String {
+    return if (this.isEmpty().not()) {
+        this.substring(0, this.length - 1)
+    } else {
+        ""
+    }
+}
+
+fun String.toActors(): String {
+    if (this.isEmpty()) {
+        return ""
+    }
+    val items = this.substring(0, this.length - 1).split("|")
+    return items.joinToString(",")
+}
