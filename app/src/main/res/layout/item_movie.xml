@@ -82,6 +82,7 @@
         </LinearLayout>
         
         <ImageButton
+            android:id="@+id/btn_favorite"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_width="wrap_content"

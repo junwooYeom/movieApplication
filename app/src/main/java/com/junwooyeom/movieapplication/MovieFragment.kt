@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.junwooyeom.domain.Movie
 import com.junwooyeom.movieapplication.databinding.FragmentMovieBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -23,7 +24,10 @@ class MovieFragment : Fragment() {
     private val favoriteViewModel by viewModels<FavoriteViewModel>()
 
     private val adapter by lazy {
-        MovieAdapter()
+        MovieAdapter(
+            this::onMovieSelected,
+            this::onMovieFavoriteSelected
+        )
     }
 
     override fun onCreateView(
@@ -74,6 +78,14 @@ class MovieFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun onMovieSelected(movie: Movie) {
+
+    }
+
+    private fun onMovieFavoriteSelected(movie: Movie, isSelected: Boolean) {
+
     }
 
 }
