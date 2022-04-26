@@ -81,11 +81,15 @@ class MovieFragment : Fragment() {
     }
 
     private fun onMovieSelected(movie: Movie) {
-
+        // TODO : Go To MovieDetailFragment
     }
 
     private fun onMovieFavoriteSelected(movie: Movie, isSelected: Boolean) {
-
+        if (isSelected) {
+            favoriteViewModel.deleteToFavorite(movie)
+        } else {
+            favoriteViewModel.addToFavorite(movie)
+        }
     }
 
 }

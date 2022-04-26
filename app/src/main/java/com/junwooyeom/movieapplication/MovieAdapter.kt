@@ -51,7 +51,7 @@ class MovieAdapter(
                 }
 
                 binding.btnFavorite.setOnClickListener {
-                    isMovieFavoriteSelected(movie, isFavorite.not())
+                    isMovieFavoriteSelected(movie, isFavorite)
                 }
             }
         }
