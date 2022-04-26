@@ -14,11 +14,11 @@ class MovieLocalDataSourceImpl @Inject constructor(
         return movieDao.getFavorite().map { data -> data.map { it.toMovie() } }
     }
 
-    override fun addToFavorite(movie: Movie) {
+    override suspend fun addToFavorite(movie: Movie) {
         movieDao.addToFavorite(movie.toMovieEntity())
     }
 
-    override fun deleteToFavorite(movie: Movie) {
+    override suspend fun deleteToFavorite(movie: Movie) {
         movieDao.deleteToFavorite(movie.toMovieEntity())
     }
 }

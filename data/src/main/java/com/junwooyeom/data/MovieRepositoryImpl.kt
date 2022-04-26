@@ -17,6 +17,6 @@ class MovieRepositoryImpl @Inject constructor(
 
     override fun getMovies(query: String): Flow<PagingData<Movie>> = remoteDataSource.getMovies(query)
     override fun getFavoriteList(): Flow<List<Movie>> = localDataSource.getFavoriteList()
-    override fun addToFavorite(movie: Movie) = localDataSource.addToFavorite(movie)
-    override fun deleteToFavorite(movie: Movie) = localDataSource.deleteToFavorite(movie)
+    override suspend fun addToFavorite(movie: Movie) = localDataSource.addToFavorite(movie)
+    override suspend fun deleteToFavorite(movie: Movie) = localDataSource.deleteToFavorite(movie)
 }

@@ -6,8 +6,8 @@ interface MovieLocalDataSource {
 
     fun getFavoriteList(): Flow<List<Movie>>
 
-    fun addToFavorite(movie: Movie)
+    suspend fun addToFavorite(movie: Movie)
 
-    fun deleteToFavorite(movie: Movie)
+    suspend fun deleteToFavorite(movie: Movie)
 
 }
