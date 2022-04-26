@@ -22,8 +22,14 @@ class DataLayerModule {
 
     @Provides
     @Singleton
-    fun providesMovieRepository(dataSource: MovieRemoteDataSource): MovieRepository =
-        MovieRepositoryImpl(dataSource)
+    fun providesMovieRepository(
+        remoteDataSource: MovieRemoteDataSource,
+        localDataSource: MovieLocalDataSource
+    ): MovieRepository =
+        MovieRepositoryImpl(
+            remoteDataSource,
+            localDataSource
+        )
 
     @Provides
     @Singleton

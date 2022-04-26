@@ -45,7 +45,7 @@ class MovieFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentMovieBinding.bind(view)
 
-        initViews()
+        initRecyclerView()
         initListeners()
         subscribeFavorite()
     }
@@ -59,14 +59,14 @@ class MovieFragment : Fragment() {
     }
 
     private fun subscribeFavorite() {
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+        viewLifecycleOwner.lifecycleScope.launch {
             favoriteViewModel.getFavorites().collect {
-                adapter.addToFavoriteMovieList(it)
+                // adapter.addToFavoriteMovieList(it)
             }
         }
     }
 
-    private fun initViews() {
+    private fun initRecyclerView() {
         binding.rvMovie.layoutManager = LinearLayoutManager(requireContext())
         binding.rvMovie.adapter = adapter
         binding.rvMovie.addItemDecoration(

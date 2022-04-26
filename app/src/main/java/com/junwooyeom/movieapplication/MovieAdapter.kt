@@ -14,7 +14,7 @@ class MovieAdapter(
     private val isMovieFavoriteSelected: (Movie, Boolean) -> Unit
 ) : PagingDataAdapter<Movie, MovieAdapter.ViewHolder>(movieComparator) {
 
-    private var favoriteMovieList: Set<Movie> = setOf()
+    private var favoriteMovieList: List<Movie> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -31,10 +31,8 @@ class MovieAdapter(
     }
 
     fun addToFavoriteMovieList(movieList: List<Movie>) {
-        favoriteMovieList.plus(movieList)
-        notifyItemRangeChanged(
-            0, itemCount
-        )
+        favoriteMovieList = movieList
+        notifyItemRangeChanged(0, itemCount)
     }
 
     class ViewHolder(
