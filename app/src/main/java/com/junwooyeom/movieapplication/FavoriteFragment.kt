@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.junwooyeom.domain.Movie
@@ -62,7 +64,10 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun onMovieSelected(movie: Movie) {
-        // todo : Go to MovieDetailFragment
+        findNavController().navigate(
+            R.id.action_favoriteFragment_to_detailFragment,
+            bundleOf("movie" to movie)
+        )
     }
 
     private fun onMovieFavoriteSelected(movie: Movie, isSelected: Boolean) {
