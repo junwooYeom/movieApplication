@@ -1,4 +1,4 @@
-package com.junwooyeom.movieapplication
+package com.junwooyeom.movieapplication.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.junwooyeom.domain.model.Movie
+import com.junwooyeom.movieapplication.R
 import com.junwooyeom.movieapplication.databinding.FragmentMovieBinding
+import com.junwooyeom.movieapplication.presentation.viewmodel.FavoriteViewModel
+import com.junwooyeom.movieapplication.presentation.adapter.MovieAdapter
+import com.junwooyeom.movieapplication.presentation.viewmodel.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch

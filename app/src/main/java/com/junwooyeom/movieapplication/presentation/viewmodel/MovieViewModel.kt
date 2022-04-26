@@ -1,4 +1,4 @@
-package com.junwooyeom.movieapplication
+package com.junwooyeom.movieapplication.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

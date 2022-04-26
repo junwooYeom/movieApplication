@@ -1,4 +1,4 @@
-package com.junwooyeom.movieapplication
+package com.junwooyeom.movieapplication.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
