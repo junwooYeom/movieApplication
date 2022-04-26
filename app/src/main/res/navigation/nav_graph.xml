@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.junwooyeom.movieapplication.DetailFragment"
+        android:name="com.junwooyeom.movieapplication.presentation.fragment.DetailFragment"
         android:label="DetailFragment"
         tools:layout="@layout/fragment_detail"
         />
     <fragment
         android:id="@+id/favoriteFragment"
-        android:name="com.junwooyeom.movieapplication.FavoriteFragment"
+        android:name="com.junwooyeom.movieapplication.presentation.fragment.FavoriteFragment"
         android:label="FavoriteFragment"
         tools:layout="@layout/fragment_favorite">
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/movieFragment"
-        android:name="com.junwooyeom.movieapplication.MovieFragment"
+        android:name="com.junwooyeom.movieapplication.presentation.fragment.MovieFragment"
         android:label="MovieFragment"
         tools:layout="@layout/fragment_movie">
         <action
