@@ -1,8 +1,8 @@
 package com.junwooyeom.data
 
 import com.example.database.MovieEntity
-import com.junwooyeom.domain.Movie
-import com.junwooyeom.network.MovieDto
+import com.junwooyeom.domain.model.Movie
+import com.junwooyeom.network.model.dto.MovieDto
 
 fun MovieDto.toMovie(): Movie =
     Movie(

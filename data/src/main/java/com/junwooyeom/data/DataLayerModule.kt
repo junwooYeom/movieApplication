@@ -1,10 +1,10 @@
 package com.junwooyeom.data
 
 import com.example.database.MovieDao
-import com.junwooyeom.domain.MovieLocalDataSource
-import com.junwooyeom.domain.MovieRemoteDataSource
-import com.junwooyeom.domain.MovieRepository
-import com.junwooyeom.network.MovieInfraService
+import com.junwooyeom.domain.datasource.MovieLocalDataSource
+import com.junwooyeom.domain.datasource.MovieRemoteDataSource
+import com.junwooyeom.domain.repository.MovieRepository
+import com.junwooyeom.network.infraservice.MovieInfraService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

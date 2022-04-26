@@ -1,10 +1,10 @@
 package com.junwooyeom.data
 
 import androidx.paging.PagingData
-import com.junwooyeom.domain.Movie
-import com.junwooyeom.domain.MovieLocalDataSource
-import com.junwooyeom.domain.MovieRemoteDataSource
-import com.junwooyeom.domain.MovieRepository
+import com.junwooyeom.domain.model.Movie
+import com.junwooyeom.domain.datasource.MovieLocalDataSource
+import com.junwooyeom.domain.datasource.MovieRemoteDataSource
+import com.junwooyeom.domain.repository.MovieRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton

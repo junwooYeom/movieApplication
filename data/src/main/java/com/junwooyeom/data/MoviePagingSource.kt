@@ -2,12 +2,12 @@ package com.junwooyeom.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.junwooyeom.domain.Movie
-import com.junwooyeom.network.MovieInfraService
+import com.junwooyeom.domain.model.Movie
+import com.junwooyeom.network.infraservice.MovieInfraService
 
 class MoviePagingSource(
-   private val infraService: MovieInfraService,
-   private val query: String
+    private val infraService: MovieInfraService,
+    private val query: String
 ): PagingSource<Int, Movie>(){
     override fun getRefreshKey(state: PagingState<Int, Movie>): Int? {
         return state.anchorPosition?.let { anchorPosition ->

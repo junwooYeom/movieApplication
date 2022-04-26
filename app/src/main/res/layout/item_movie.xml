@@ -3,7 +3,7 @@
     <data>
         <variable
             name="movie"
-            type="com.junwooyeom.domain.Movie" />
+            type="com.junwooyeom.domain.model.Movie" />
         <variable
             name="isSelected"
             type="Boolean" />

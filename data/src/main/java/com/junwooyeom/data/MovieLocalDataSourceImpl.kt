@@ -1,8 +1,8 @@
 package com.junwooyeom.data
 
 import com.example.database.MovieDao
-import com.junwooyeom.domain.Movie
-import com.junwooyeom.domain.MovieLocalDataSource
+import com.junwooyeom.domain.model.Movie
+import com.junwooyeom.domain.datasource.MovieLocalDataSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

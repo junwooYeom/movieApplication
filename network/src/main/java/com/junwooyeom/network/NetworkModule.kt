@@ -1,5 +1,7 @@
 package com.junwooyeom.network
 
+import com.junwooyeom.network.infraservice.MovieInfraService
+import com.junwooyeom.network.interceptor.AuthInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,7 +35,8 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesMovieInfraService(retrofit: Retrofit): MovieInfraService = retrofit.create(MovieInfraService::class.java)
+    fun providesMovieInfraService(retrofit: Retrofit): MovieInfraService = retrofit.create(
+        MovieInfraService::class.java)
 
     private companion object {
         const val BASE_URL = "https://openapi.naver.com/"

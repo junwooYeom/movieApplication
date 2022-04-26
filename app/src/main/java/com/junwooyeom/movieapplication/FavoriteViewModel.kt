@@ -1,8 +1,8 @@
 package com.junwooyeom.movieapplication
 
 import androidx.lifecycle.ViewModel
-import com.junwooyeom.domain.GetFavoritesUseCase
-import com.junwooyeom.domain.Movie
+import com.junwooyeom.domain.usecase.GetFavoritesUseCase
+import com.junwooyeom.domain.model.Movie
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

@@ -5,9 +5,8 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.junwooyeom.domain.Movie
+import com.junwooyeom.domain.model.Movie
 import com.junwooyeom.movieapplication.databinding.ItemMovieBinding
-import java.lang.IllegalArgumentException
 
 class MovieAdapter(
     private val isMovieSelected: (Movie) -> Unit,
