@@ -10,7 +10,7 @@ import com.junwooyeom.movieapplication.databinding.ItemMovieBinding
 
 class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.ViewHolder>(movieComparator){
 
-    private val favoriteMovieList: List<Movie> = listOf()
+    private var favoriteMovieList: Set<Movie> = setOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(ItemMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false))
@@ -18,6 +18,13 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.ViewHolder>(movieComp
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position), favoriteMovieList.find { getItem(position)?.title == it.title } != null)
+    }
+
+    fun addToFavoriteMovieList(movieList: List<Movie>) {
+        favoriteMovieList.plus(movieList)
+        notifyItemRangeChanged(
+            0, itemCount
+        )
     }
 
     class ViewHolder(

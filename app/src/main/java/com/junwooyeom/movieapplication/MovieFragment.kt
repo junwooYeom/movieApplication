@@ -19,7 +19,8 @@ class MovieFragment : Fragment() {
 
     private lateinit var binding: FragmentMovieBinding
 
-    private val viewModel by viewModels<MovieViewModel>()
+    private val movieViewModel by viewModels<MovieViewModel>()
+    private val favoriteViewModel by viewModels<FavoriteViewModel>()
 
     private val adapter by lazy {
         MovieAdapter()
@@ -39,12 +40,21 @@ class MovieFragment : Fragment() {
 
         initViews()
         initListeners()
+        subscribeFavorite()
     }
 
     private fun getMovie(query: String) {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.getMovie(query).collect {
+            movieViewModel.getMovie(query).collect {
                 adapter.submitData(it)
+            }
+        }
+    }
+
+    private fun subscribeFavorite() {
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            favoriteViewModel.getFavorites().collect {
+                adapter.addToFavoriteMovieList(it)
             }
         }
     }
