@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.junwooyeom.domain.Movie
 import com.junwooyeom.movieapplication.databinding.FragmentMovieBinding
@@ -66,6 +67,9 @@ class MovieFragment : Fragment() {
     private fun initViews() {
         binding.rvMovie.layoutManager = LinearLayoutManager(requireContext())
         binding.rvMovie.adapter = adapter
+        binding.rvMovie.addItemDecoration(
+            DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
+        )
     }
 
     private fun initListeners() {
