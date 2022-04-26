@@ -1,6 +1,9 @@
 package com.junwooyeom.data
 
-import com.example.database.MovieDao
+import com.example.database.dao.MovieDao
+import com.junwooyeom.data.datasource.MovieLocalDataSourceImpl
+import com.junwooyeom.data.datasource.MovieRemoteDataSourceImpl
+import com.junwooyeom.data.repository.MovieRepositoryImpl
 import com.junwooyeom.domain.datasource.MovieLocalDataSource
 import com.junwooyeom.domain.datasource.MovieRemoteDataSource
 import com.junwooyeom.domain.repository.MovieRepository

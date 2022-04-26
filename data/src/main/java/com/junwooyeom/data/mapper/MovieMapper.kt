@@ -1,6 +1,6 @@
-package com.junwooyeom.data
+package com.junwooyeom.data.mapper
 
-import com.example.database.MovieEntity
+import com.example.database.entity.MovieEntity
 import com.junwooyeom.domain.model.Movie
 import com.junwooyeom.network.model.dto.MovieDto
 

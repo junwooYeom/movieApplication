@@ -1,6 +1,8 @@
-package com.junwooyeom.data
+package com.junwooyeom.data.datasource
 
-import com.example.database.MovieDao
+import com.example.database.dao.MovieDao
+import com.junwooyeom.data.mapper.toMovie
+import com.junwooyeom.data.mapper.toMovieEntity
 import com.junwooyeom.domain.model.Movie
 import com.junwooyeom.domain.datasource.MovieLocalDataSource
 import kotlinx.coroutines.flow.Flow

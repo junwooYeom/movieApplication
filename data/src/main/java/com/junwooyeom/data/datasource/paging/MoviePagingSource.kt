@@ -1,7 +1,8 @@
-package com.junwooyeom.data
+package com.junwooyeom.data.datasource.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.junwooyeom.data.mapper.toMovie
 import com.junwooyeom.domain.model.Movie
 import com.junwooyeom.network.infraservice.MovieInfraService
 

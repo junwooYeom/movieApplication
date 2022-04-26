@@ -1,8 +1,9 @@
-package com.junwooyeom.data
+package com.junwooyeom.data.datasource
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import com.junwooyeom.data.datasource.paging.MoviePagingSource
 import com.junwooyeom.domain.model.Movie
 import com.junwooyeom.domain.datasource.MovieRemoteDataSource
 import com.junwooyeom.network.infraservice.MovieInfraService

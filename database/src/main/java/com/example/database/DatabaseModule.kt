@@ -2,6 +2,7 @@ package com.example.database
 
 import android.content.Context
 import androidx.room.Room
+import com.example.database.dao.MovieDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

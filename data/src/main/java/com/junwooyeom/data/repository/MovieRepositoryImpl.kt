@@ -1,4 +1,4 @@
-package com.junwooyeom.data
+package com.junwooyeom.data.repository
 
 import androidx.paging.PagingData
 import com.junwooyeom.domain.model.Movie
