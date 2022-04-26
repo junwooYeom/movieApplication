@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.junwooyeom.domain.Movie
+import com.junwooyeom.domain.model.Movie
 import com.junwooyeom.movieapplication.databinding.ItemMovieBinding
 
 class FavoriteAdapter(

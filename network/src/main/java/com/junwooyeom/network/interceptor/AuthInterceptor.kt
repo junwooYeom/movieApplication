@@ -1,5 +1,6 @@
-package com.junwooyeom.network
+package com.junwooyeom.network.interceptor
 
+import com.junwooyeom.network.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 

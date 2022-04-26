@@ -1,6 +1,7 @@
-package com.junwooyeom.domain
+package com.junwooyeom.domain.repository
 
 import androidx.paging.PagingData
+import com.junwooyeom.domain.model.Movie
 import kotlinx.coroutines.flow.Flow
 
 interface MovieRepository {

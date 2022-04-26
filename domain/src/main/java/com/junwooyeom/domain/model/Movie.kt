@@ -1,4 +1,4 @@
-package com.junwooyeom.domain
+package com.junwooyeom.domain.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

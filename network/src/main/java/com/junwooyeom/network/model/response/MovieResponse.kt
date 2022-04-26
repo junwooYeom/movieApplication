@@ -1,6 +1,7 @@
-package com.junwooyeom.network
+package com.junwooyeom.network.model.response
 
 import com.google.gson.annotations.SerializedName
+import com.junwooyeom.network.model.dto.MovieDto
 
 data class MovieResponse(
     @SerializedName("total")

@@ -1,5 +1,7 @@
-package com.junwooyeom.domain
+package com.junwooyeom.domain.usecase
 
+import com.junwooyeom.domain.model.Movie
+import com.junwooyeom.domain.repository.MovieRepository
 import javax.inject.Inject
 
 class AddToFavoriteUseCase @Inject constructor(

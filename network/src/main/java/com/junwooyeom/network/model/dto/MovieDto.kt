@@ -1,4 +1,4 @@
-package com.junwooyeom.network
+package com.junwooyeom.network.model.dto
 
 import com.google.gson.annotations.SerializedName
 
