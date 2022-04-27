@@ -65,7 +65,7 @@ class MovieFragment : Fragment() {
     private fun subscribeFavorite() {
         viewLifecycleOwner.lifecycleScope.launch {
             favoriteViewModel.getFavorites().collect {
-                // adapter.addToFavoriteMovieList(it)
+                 adapter.addToFavoriteMovieList(it)
             }
         }
     }
