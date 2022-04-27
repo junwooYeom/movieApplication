@@ -1,9 +1,11 @@
 package com.junwooyeom.movieapplication.presentation.fragment.detail
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.junwooyeom.movieapplication.R
@@ -27,5 +29,17 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentDetailBinding.bind(view)
+        initWebView()
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun initWebView() {
+        with(binding.webView) {
+            webViewClient = WebViewClient()
+            settings.apply {
+                javaScriptEnabled = true
+            }
+            loadUrl(args.movie.link)
+        }
     }
 }
