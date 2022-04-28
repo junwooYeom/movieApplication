@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.junwooyeom.domain.model.Movie
@@ -76,6 +77,15 @@ class MovieFragment : Fragment() {
         binding.rvMovie.addItemDecoration(
             DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
         )
+        adapter.addLoadStateListener { loadState ->
+            if (loadState.source.refresh is LoadState.NotLoading && loadState.append.endOfPaginationReached && adapter.itemCount < 1) {
+                binding.rvMovie.visibility = View.GONE
+                binding.layoutEmpty.visibility = View.VISIBLE
+            } else {
+                binding.layoutEmpty.visibility = View.GONE
+                binding.rvMovie.visibility = View.VISIBLE
+            }
+        }
     }
 
     private fun initListeners() {
