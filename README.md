@@ -53,5 +53,6 @@
 2. 현재 즐겨찾기에서 삭제 기능 추가.
 
 ## 완료되지 않은 이슈
-1. TextWatcher 에서 변경될 때 간헐적으로 `Paging Key Error` 가 나오는데, 그 `Paging Key Error` 에 대한 핸들링이 되어있지 않음.
+1. TextWatcher 에서 빠르게 Text 를 변경될 때 `Paging Key Error` 가 나오는데, 그 `Paging Key Error` 에 대한 핸들링이 되어있지 않음. 
+   -> 하나하나 천천히 페이징을 진행하게 되면 페이징이 정상적으로 변경된다.
 
