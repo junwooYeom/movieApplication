@@ -67,7 +67,8 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun onMovieSelected(movie: Movie) {
-        val action = FavoriteFragmentDirections.actionFavoriteFragmentToDetailFragment(movie)
+        val action =
+            FavoriteFragmentDirections.actionFavoriteFragmentToDetailFragment(movie, movie.title)
         findNavController().navigate(action)
     }
 

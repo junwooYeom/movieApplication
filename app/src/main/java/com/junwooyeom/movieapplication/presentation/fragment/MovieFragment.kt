@@ -109,7 +109,8 @@ class MovieFragment : Fragment() {
 
     private fun onMovieSelected(movie: Movie) {
         val action = MovieFragmentDirections.actionMovieFragmentToDetailFragment(
-            movie
+            movie,
+            movie.title
         )
         findNavController().navigate(action)
     }
