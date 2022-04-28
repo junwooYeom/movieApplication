@@ -17,7 +17,7 @@ class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
 
-    private val args by navArgs<DetailFragmentArgs>()
+    private val args: DetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,7 +39,7 @@ class DetailFragment : Fragment() {
             settings.apply {
                 javaScriptEnabled = true
             }
-            loadUrl(args.movie.link)
+            loadUrl(args.myArgs.link)
         }
     }
 }

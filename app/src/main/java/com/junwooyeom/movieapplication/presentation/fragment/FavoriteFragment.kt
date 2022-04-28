@@ -67,10 +67,8 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun onMovieSelected(movie: Movie) {
-        findNavController().navigate(
-            R.id.action_favoriteFragment_to_detailFragment,
-            bundleOf("movie" to movie)
-        )
+        val action = FavoriteFragmentDirections.actionFavoriteFragmentToDetailFragment(movie)
+        findNavController().navigate(action)
     }
 
     private fun onMovieFavoriteSelected(movie: Movie, isSelected: Boolean) {
