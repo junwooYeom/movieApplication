@@ -19,7 +19,14 @@ class MoviePagingSource(
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
         return try {
-            val nextPageNumber = params.key ?: 1
+            val nextPageNumber = if (params.key == null) {
+                1
+            } else {
+                when(params){
+                    is LoadParams.Append -> params.key
+                    else -> 1
+                }
+            }
             val response = infraService.getMoviesByQuery(query, nextPageNumber)
             LoadResult.Page(
                 data = response.items.map { it.toMovie() },
