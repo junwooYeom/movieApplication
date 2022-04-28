@@ -98,6 +98,11 @@ class MovieFragment : Fragment() {
                 }
             }
         }
+
+        binding.btnFavorite.setOnClickListener {
+            val action = MovieFragmentDirections.actionMovieFragmentToFavoriteFragment()
+            findNavController().navigate(action)
+        }
     }
 
     private fun onMovieSelected(movie: Movie) {
