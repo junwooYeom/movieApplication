@@ -2,8 +2,8 @@ package com.junwooyeom.movieapplication.presentation.bindingadapter
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
-import com.junwooyeom.movieapplication.GlideApp
 import com.junwooyeom.movieapplication.R
+import com.junwooyeom.movieapplication.presentation.GlideApp
 
 object BindingAdapter {
     @BindingAdapter("imageUrl")

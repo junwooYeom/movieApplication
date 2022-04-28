@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -89,12 +90,13 @@ class MovieFragment : Fragment() {
     }
 
     private fun initListeners() {
-        binding.btnSearch.setOnClickListener {
-            with (binding.etSearch.text) {
-                if (isNullOrEmpty().not()) {
-                    getMovie(this.toString())
+        with(binding.etMovie.editText) {
+            this?.doOnTextChanged { text, _, _, _ ->
+                if (text.isNullOrEmpty()) {
+                    binding.etMovie.error = "영화 제목을 입력해주세요."
                 } else {
-                    Toast.makeText(requireContext(), "영화 제목을 입력해주세요", Toast.LENGTH_SHORT).show()
+                    binding.etMovie.error = null
+                    getMovie(text.toString())
                 }
             }
         }

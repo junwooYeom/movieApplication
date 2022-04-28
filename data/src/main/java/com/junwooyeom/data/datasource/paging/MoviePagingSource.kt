@@ -24,6 +24,7 @@ class MoviePagingSource(
             } else {
                 when(params){
                     is LoadParams.Append -> params.key
+                    is LoadParams.Prepend -> params.key
                     else -> 1
                 }
             }
