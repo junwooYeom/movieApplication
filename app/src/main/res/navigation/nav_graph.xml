@@ -9,8 +9,12 @@
         android:id="@+id/detailFragment"
         android:name="com.junwooyeom.movieapplication.presentation.fragment.detail.DetailFragment"
         android:label="DetailFragment"
-        tools:layout="@layout/fragment_detail"
-        />
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="myArgs"
+            app:argType="com.junwooyeom.domain.model.Movie"/>
+    </fragment>
+
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.junwooyeom.movieapplication.presentation.fragment.FavoriteFragment"

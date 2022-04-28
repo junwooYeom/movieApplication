@@ -92,7 +92,7 @@ class MovieFragment : Fragment() {
 
     private fun onMovieSelected(movie: Movie) {
         findNavController().navigate(
-            R.id.action_favoriteFragment_to_detailFragment,
+            R.id.action_movieFragment_to_detailFragment,
             bundleOf("movie" to movie)
         )
     }
